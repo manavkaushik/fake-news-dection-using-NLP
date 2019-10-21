@@ -6,8 +6,8 @@ The code has been built keeping in reference to the paper:
 https://aclweb.org/anthology/W18-5513 .
 The first part of the code tries to mimic some part of the same paper i.e. using Logistic
 Regression and BiLSTM models for creating an appropriate classifier. Following
-pre-processes were implemented before running the model:
-  ● Data Cleaning by lowercasing all texts and dropping rows with NULL variables.
+pre-processes were implemented before running the model:\n
+  ● Data Cleaning by lowercasing all texts and dropping rows with NULL variables.\n
   ● Using Count Vectorizer for transforming the training and testing data.
   ● Using tf-idf Vectorizer for transforming the training and testing data.
   ● Removing all stop words (using nltk library).
@@ -127,4 +127,4 @@ research temperament.
     ○ https://www.kaggle.com/diveki/classification-with-nlp-xgboost-and-pipelines
     ○ https://towardsdatascience.com/machine-learning-nlp-text-classification-using-sci
       kit-learn-python-and-nltk-c52b92a7c73a
-○ https://stackabuse.com/text-classification-with-python-and-scikit-learn/
+    ○ https://stackabuse.com/text-classification-with-python-and-scikit-learn/
