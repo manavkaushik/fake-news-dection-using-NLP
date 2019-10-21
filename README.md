@@ -33,7 +33,7 @@ with a few helper functions, sentiment analysis and ‘Lemma tokenization’.
 ● Binary Classification: Best Accuracy Score (F1 Score) using XGBoost: 0.72 or
 72%
 
-
+![](https://github.com/manavkaushik/fake-news-dection-using-NLP/blob/master/performance.png)
 
 Thus, the best classifier turns out to be: XGBoost (with tuned hyperparameters). The
 classification results turned out to be even better than those in the journal paper (where the
