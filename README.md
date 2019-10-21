@@ -6,7 +6,8 @@ The code has been built keeping in reference to the paper:
 https://aclweb.org/anthology/W18-5513 .
 The first part of the code tries to mimic some part of the same paper i.e. using Logistic
 Regression and BiLSTM models for creating an appropriate classifier. Following
-pre-processes were implemented before running the model:\n
+pre-processes were implemented before running the model:
+
   ● Data Cleaning by lowercasing all texts and dropping rows with NULL variables.\n
   ● Using Count Vectorizer for transforming the training and testing data.
   ● Using tf-idf Vectorizer for transforming the training and testing data.
