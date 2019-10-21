@@ -7,13 +7,12 @@ https://aclweb.org/anthology/W18-5513 .
 The first part of the code tries to mimic some part of the same paper i.e. using Logistic
 Regression and BiLSTM models for creating an appropriate classifier. Following
 pre-processes were implemented before running the model:
-
-  ● Data Cleaning by lowercasing all texts and dropping rows with NULL variables.\n
+  ● Data Cleaning by lowercasing all texts and dropping rows with NULL variables.
   ● Using Count Vectorizer for transforming the training and testing data.
   ● Using tf-idf Vectorizer for transforming the training and testing data.
   ● Removing all stop words (using nltk library).
   ● Text Stemming
-
+  
 The second part of the code yields the best classifier: XGBoost (a Boosting Ensemble).
 This part of the code uses similar kinds of pre-processes as the first part but using a pipeline
 with a few helper functions, sentiment analysis and ‘Lemma tokenization’.
