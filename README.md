@@ -42,7 +42,9 @@ best results were: 0.38 for Six Way and 0.70 for Binary classification)
 ## How I achieved this result?
 
 The exact processes that I followed to achieve this result are as follows:
+
   ● Data Preprocessing:
+  
     ○ Removing irrelevant columns like index and JSON id.
     ○ By removing data points having Null values.
     ○ Noun & Adjective Tagging.
@@ -51,21 +53,31 @@ The exact processes that I followed to achieve this result are as follows:
       transformations.
     ○ Calculating sentiments of the statements through Lexicon (using ‘Empath’
     library).
+    
   ● Building pipelines to put all these things together.
+  
   ● Performing a GridSearch for tuning XGBoost Hyperparameters.
+  
   ● Ran the model on the transformed data to achieve 39% accuracy.
   
   
 ## Why XGBoost?
+
   ● XGBoost is a regularized boosting technique which helps reducing overfitting.
+  
   ● Unlike other tree algorithms, XGBoost make splits up to the max_depth specified
     and then start pruning the tree backwards and remove splits beyond which there is
     no positive gain.
+    
   ● XGBoost is a boosting algorithm i.e. it tries to fit the data by using multiple simpler
     models, or so-called base learner/weak learner.
+    
   ● It is invariant under monotone transformations of the inputs.
+  
   ● It performs implicit variable selection.
+  
   ● It can capture non-linear relationships in the data.
+  
   ● It can capture high-order interactions between inputs.
   
   
@@ -74,12 +86,15 @@ The exact processes that I followed to achieve this result are as follows:
   ● Firstly, I tried implementing a very simple model with only ‘statement’ (or ‘news’)
     column as an input parameter and LogisticRegression as the classifier. The accuracy
     achieved was exactly similar to that in the paper i.e. 0.25.
+    
   ● Surprisingly, I couldn’t achieve significantly higher results even after adding the
     ‘justification’ columns and metadata.
+    
   ● After this, I implemented some other well-known algorithms like SVM, AdaBoost,
     Random Forest and NaiveBayes (using sklearn) and a bi-directional LSTM and their
     stackings (using Keras), but none of them which couldn’t achieve accuracy better
     than Logistic regression.
+    
   ● Then, I implemented an XGBoost algorithm with all the above-mentioned
     modifications (some of the ideas were drawn from kaggle competitions and blogs)
     which gave an accuracy of 39%.
@@ -94,6 +109,7 @@ taking the pre-final layer (i.e the last hidden layer) as input for XGBoost. The
 behind this ensemble is to leverage the strongest abilities of both these algorithms:
 complex relation-learning of FNN and the boosting property of XGBoost while at the
 same time avoiding overfitting.
+
 - In a nutshell, there are several techniques to solve the problem of Text Classification
 which can be effectively implemented with adequate ML and data expertise and sound
 research temperament.
@@ -102,6 +118,7 @@ research temperament.
 ## References:
 
   ● Libraries used:
+  
     ○ Numpy
     ○ Pandas
     ○ Matplotlib
@@ -117,6 +134,7 @@ research temperament.
     ○ Textblob (for sentiment analysis)
     
   ● Papers cited :
+  
     ○ https://aclweb.org/anthology/W18-5513
     ○ https://arxiv.org/pdf/1602.06979.pdf
     ○ https://www.aclweb.org/anthology/E17-1104
@@ -126,6 +144,7 @@ research temperament.
     ○ https://www.ijcai.org/Proceedings/16/Papers/408.pdf
     
   ● Websites cited:
+  
     ○ https://www.analyticsvidhya.com/blog/2018/04/a-comprehensive-guide-to-underst
       and-and-implement-text-classification-in-python/
     ○ https://medium.com/@himanshu_23732/sentiment-analysis-with-textblob-6bc2eb
